@@ -45,18 +45,16 @@ int main()
                 }
                 else if (in==2) {
                     for(int i=0;i<6;i++) {
-                                                printf("%s = %d\n", NamaSenjata[i], JumlahSenjata[i]);
-                                        }
+                        printf("%s = %d\n", NamaSenjata[i], JumlahSenjata[i]);
                 }
-                else if (in==3)
-                {
+                }
+                else if (in==3){
                         break;
-                                }
-                                else
-                                {
-                                        printf("salah input");
-                                }
-                        printf ("\n1. Tambah stock senjata \n2. Lihat stock senjata \n3. Exit Menu.\n\n");
+                }
+                else {
+                        printf("salah input");
+                }
+        printf ("\n1. Tambah stock senjata \n2. Lihat stock senjata \n3. Exit Menu.\n\n");
         }
         shmdt(value);
         shmctl(shmid, IPC_RMID, NULL);
