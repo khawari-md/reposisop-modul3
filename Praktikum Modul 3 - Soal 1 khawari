@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <unistd.h>
+#include <string.h>
+
+void main()
+{
+        key_t key = 1234;
+        int shmid = shmget(key, sizeof(int), IPC_CREAT | 0666);
+        value = shmat(shmid, NULL, 0);
+        
+        char NamaSenjata[6][10]={"MP4A1","PM2-V1","SPR-3","SS2-V5","SPG1-V3","MINE"};
+        char JumlahSenjata[6];
+        int in,nambah;
+        printf ("\n1. Tambah stock senjata \n2. Lihat stock senjata \n3. Exit Menu.\n");
+        scanf ("%d", &in);
+        while (in !=3) {
+                if (in=1) {
+                        /*scanf ("%c %d",&NamaSenjata,&nambah);
+
+                        printf("%c bertambah sebanyak %d unit",NamaSenjata,nambah); */
+                        
+                }
+                else if (in=2) {
+                        printf("MP4A1= %d\n", JumlahSenjata[1]);
+                        printf("PM2-V1= %d\n", JumlahSenjata[2]);
+                        printf("SPR-3= %d\n", JumlahSenjata[3]);
+                        printf("SS2-V5= %d\n", JumlahSenjata[4]);
+                        printf("SPG1-V3= %d\n", JumlahSenjata[5]);
+                        printf("MINE= %d\n", JumlahSenjata[6]);
+                }
+
+        }
+        shmdt(value);
+        shmctl(shmid, IPC_RMID, NULL);
+}
