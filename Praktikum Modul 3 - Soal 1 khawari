@@ -16,12 +16,12 @@ int main()
         int JumlahSenjata[6]={0,0,0,0,0,0};
         int in;
         printf ("\n1. Tambah stock senjata \n2. Lihat stock senjata \n3. Exit Menu.\n\n");
-
+        //scanf ("%d", &in);
         while (scanf ("%d", &in)) {
                 if (in==1) {
                         printf ("Jenis senjata yang ada MP4A1, PM2-V1, SPR-3, SS2-V5, SPG1-V3, MINE\n\n");
                         int nambah;char senjata[100];
-                        scanf("%s %d", &senjata,&nambah);
+                        scanf("%s %d", senjata,&nambah);
                         if(strcmp(senjata,"MP4A1")==0) {
                                 JumlahSenjata[0] += nambah;
                         }
@@ -45,16 +45,18 @@ int main()
                 }
                 else if (in==2) {
                     for(int i=0;i<6;i++) {
-                        printf("%s = %d\n", NamaSenjata[i], JumlahSenjata[i]);
-                        }
+                                                printf("%s = %d\n", NamaSenjata[i], JumlahSenjata[i]);
+                                        }
                 }
-                else if (in==3) {
+                else if (in==3)
+                {
                         break;
-                }
-                else {
-                        printf("salah input");
-                }
-                printf ("\n1. Tambah stock senjata \n2. Lihat stock senjata \n3. Exit Menu.\n\n");
+                                }
+                                else
+                                {
+                                        printf("salah input");
+                                }
+                        printf ("\n1. Tambah stock senjata \n2. Lihat stock senjata \n3. Exit Menu.\n\n");
         }
         shmdt(value);
         shmctl(shmid, IPC_RMID, NULL);
